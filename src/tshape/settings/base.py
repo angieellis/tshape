@@ -88,9 +88,9 @@ WSGI_APPLICATION = 'tshape.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'HOST': 'db',
+        'NAME': 'tshape',
+        'USER': 'tshape',
+        'HOST': 'localhost',
         'PORT': 5432,
     }
 }

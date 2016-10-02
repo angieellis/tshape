@@ -7,3 +7,6 @@ djangorestframework
 drf-nested-routers
 graphene[django]
 Sphinx
+django-template-repl
+dj-database-url
+gunicorn
