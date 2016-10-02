@@ -1,6 +1,7 @@
 Django
 psycopg2
 ipython
+fake-factory
 django-extensions
 python-dotenv
 djangorestframework

@@ -1,6 +1,7 @@
 var pathArray = window.location.pathname.split( '/' );
 var userId = pathArray[2];
-var profileApi = "http://localhost:8000/api/profiles/" + userId + "/";
+var apiBasePath = "/api/"
+var apiProfilePath = "profiles/" + userId + "/";
 var csrfToken = Cookies.get('csrftoken');
 
 console.log("User ID:", userId);
@@ -107,9 +108,8 @@ var Profile = React.createClass({
     // Get the Profile Object
     function ajaxProfile() {
       return $.ajax({
-        url: profileApi,
+        url: apiBasePath + apiProfilePath,
         dataType: 'json',
-        cache: false,
         success: function(response) {
 
         }.bind(this),
@@ -121,7 +121,7 @@ var Profile = React.createClass({
     // Get My Skills Object
     function ajaxMySkills() {
       return $.ajax({
-        url: profileApi + "skills/",
+        url: apiBasePath + apiProfilePath + "skills/",
         dataType: 'json',
         success: function(response) {
 
@@ -134,7 +134,7 @@ var Profile = React.createClass({
     // Get My Skillsets Object
     function ajaxMySkillsets() {
       return $.ajax({
-        url: profileApi + "skillsets/",
+        url: apiBasePath + apiProfilePath + "skillsets/",
         dataType: 'json',
         success: function(response) {
 
@@ -147,7 +147,7 @@ var Profile = React.createClass({
      // Get All Skills Object
     function ajaxAllSkills() {
       return $.ajax({
-        url: "http://localhost:8000/api/skills/",
+        url: apiBasePath + "skills/",
         dataType: 'json',
         success: function(response) {
 
@@ -160,7 +160,7 @@ var Profile = React.createClass({
     // Get All Skillsets Object
     function ajaxAllSkillsets() {
       return $.ajax({
-        url: "http://localhost:8000/api/skillsets/",
+        url: apiBasePath + "skillsets/",
         dataType: 'json',
         success: function(response) {
         }.bind(this),
@@ -226,7 +226,7 @@ var Profile = React.createClass({
       // If the skillset does not exist, POST the skillset to the API
       // On success this will return a new skillset object with a valid ID
       $.ajax({
-        url: "http://localhost:8000/api/skillsets/",
+        url: apiBasePath + "skillsets/",
         type: 'POST',
         headers: {
           'X-CSRFToken': csrfToken,
@@ -286,7 +286,7 @@ var Profile = React.createClass({
     console.log("handleSkillsetPut API", data)
 
     $.ajax({
-      url: profileApi + "skillsets/",
+      url: apiBasePath + apiProfilePath + "skillsets/",
       method: "POST",
       headers: {
         'X-CSRFToken': csrfToken,
@@ -328,7 +328,7 @@ var Profile = React.createClass({
 
     // DELETE new skillsets object from API
     $.ajax({
-      url: profileApi + "skillsets/" + skillset.id,
+      url: apiBasePath + apiProfilePath + "skillsets/" + skillset.id,
       method: "DELETE",
       headers: {
         'X-CSRFToken': csrfToken,
@@ -348,7 +348,7 @@ var Profile = React.createClass({
     var data = JSON.stringify({"name": skill.name, "skillset_id": skill.skillset_id});
 
     $.ajax({
-      url: "http://localhost:8000/api/skills/",
+      url: apiBasePath + "skills/",
       dataType: 'json',
       type: 'POST',
         headers: {
@@ -411,7 +411,7 @@ var Profile = React.createClass({
 
     console.log("handleSkillPut API", data)
     $.ajax({
-      url: profileApi + "skills/",
+      url: apiBasePath + apiProfilePath + "skills/",
       method: "POST",
       headers: {
         'X-CSRFToken': csrfToken,
@@ -462,7 +462,7 @@ var Profile = React.createClass({
         
     // Update API
     $.ajax({
-      url: profileApi + "skills/" + skill.id,
+      url: apiBasePath + apiProfilePath + "skills/" + skill.id,
       method: "DELETE",
       headers: {
         'X-CSRFToken': csrfToken,
@@ -1022,6 +1022,6 @@ var Skills = React.createClass({
 });
 
 ReactDOM.render(
-<Profile url={profileApi} />,
+<Profile url={apiBasePath} />,
   document.getElementById('tshape')
 );
