@@ -10,3 +10,4 @@ Sphinx
 django-template-repl
 dj-database-url
 gunicorn
+whitenoise

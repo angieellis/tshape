@@ -1588,7 +1588,6 @@ select {
 @media only screen and (min-width: 768px) {
   /* line 4, /Users/rob/Projects/tshape/src/static/scss/blocks/_logo.scss */
   .logo__image {
-    background-image: url("../images/logo-tshape.png");
     background-size: 30px 34px;
   }
 }
@@ -1596,7 +1595,6 @@ select {
 @media only screen and (max-width: 767px) {
   /* line 4, /Users/rob/Projects/tshape/src/static/scss/blocks/_logo.scss */
   .logo__image {
-    background-image: url("../../images/logo-tshape.png");
     background-size: 30px 34px;
   }
 }
@@ -4238,11 +4236,6 @@ body.page-homepage .strip:after {
 }
 
 /* Slider */
-/* line 45, /Users/rob/Projects/tshape/src/static/modules/slick/slick-theme.scss */
-.slick-loading .slick-list {
-  background: #fff url("./ajax-loader.gif") center center no-repeat;
-}
-
 /* Icons */
 @font-face {
   font-family: "slick";

@@ -15,11 +15,11 @@
     display: none;
   }
   @media #{$medium-up} {
-    background-image: url("../images/logo-tshape.png");
+    // background-image: url("../images/logo-tshape.png");
     background-size: 30px 34px;
   }
   @media #{$small-only} {
-    background-image: url("../../images/logo-tshape.png");
+    // background-image: url("../../images/logo-tshape.png");
     background-size: 30px 34px;
   }
   a {
