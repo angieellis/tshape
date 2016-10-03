@@ -69,6 +69,12 @@ git push heroku localfeaturebranch:master
 This will deploy any local branch to the Heroku remote.
 
 ```
+heroku run python src/manage.py migrate
+```
+```
+heroku run python src/manage.py db_seed
+```
+```
 heroku open
 ```
 Will open the live app in the browser
